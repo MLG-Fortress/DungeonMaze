@@ -103,7 +103,7 @@ public class HelpPrinter {
         for(String node : permissions.getPermissionNodes()) {
             boolean nodePermission = true;
             if(sender instanceof Player)
-                nodePermission = Core.getPermissionsManager().hasPermission((Player) sender, node, false);
+                nodePermission = sender.hasPermission(node);
             final String nodePermsString = ChatColor.GRAY + (nodePermission ? ChatColor.ITALIC + " (Permission!)" : ChatColor.ITALIC + " (No Permission!)");
             sender.sendMessage(" " + ChatColor.YELLOW + ChatColor.ITALIC + node + nodePermsString);
         }

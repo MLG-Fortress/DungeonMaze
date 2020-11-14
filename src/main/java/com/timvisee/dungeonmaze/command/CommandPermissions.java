@@ -1,7 +1,6 @@
 package com.timvisee.dungeonmaze.command;
 
 import com.timvisee.dungeonmaze.Core;
-import com.timvisee.dungeonmaze.permission.PermissionsManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -128,14 +127,9 @@ public class CommandPermissions {
         // Get the player instance
         Player player = (Player) sender;
 
-        // Get the permissions manager, and make sure it's instance is valid
-        PermissionsManager permissionsManager = Core.getPermissionsManager();
-        if(permissionsManager == null)
-            return false;
-
         // Check whether the player has permission, return the result
         for(String node : this.permissionNodes)
-            if(!permissionsManager.hasPermission(player, node, defaultPermission))
+            if(!player.hasPermission(node))
                 return false;
         return true;
     }

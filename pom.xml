@@ -206,25 +206,10 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/groups/public</url>
         </repository>
-        <!-- Multiverse repository -->
-        <repository>
-            <id>onarandombox</id>
-            <url>http://repo.onarandombox.com/content/groups/public</url>
-        </repository>
-        <!-- Vault repository -->
-        <repository>
-            <id>vault-repo</id>
-            <url>http://nexus.hc.to/content/repositories/pub_releases</url>
-        </repository>
         <!-- CodeMC repository -->
         <repository>
             <id>codemc-repo</id>
             <url>https://repo.codemc.org/repository/maven-public/</url>
-        </repository>
-        <!-- bStats repository -->
-        <repository>
-            <id>bstats-repo</id>
-            <url>http://repo.bstats.org/content/groups/public</url>
         </repository>
     </repositories>
 
@@ -250,198 +235,11 @@
             <version>1.0.0</version>
             <optional>true</optional>
         </dependency>
-        <!-- bStats metrics -->
-        <dependency>
-            <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit</artifactId>
-            <version>1.2</version>
-            <optional>true</optional>
-        </dependency>
         <!-- Spigot-Api, http://www.spigotmc.org/ Based on the Bukkit project, http://bukkit.org/ -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>${spigot.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- Multi World plugin, http://www.spigotmc.org/resources/multiverse-core.390/ -->
-        <dependency>
-            <groupId>com.onarandombox.multiversecore</groupId>
-            <artifactId>Multiverse-Core</artifactId>
-            <version>2.6.0-SNAPSHOT</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.bukkit</groupId>
-                    <artifactId>bukkit</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.bukkit</groupId>
-                    <artifactId>craftbukkit</artifactId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>AllPay</artifactId>
-                    <groupId>com.fernferret.allpay</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>Vault</artifactId>
-                    <groupId>net.milkbowl.vault</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>VaultAPI</artifactId>
-                    <groupId>net.milkbowl.vault</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>CommandHandler</artifactId>
-                    <groupId>com.pneumaticraft.commandhandler</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>SerializationConfig</artifactId>
-                    <groupId>me.main__.util</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>Logging</artifactId>
-                    <groupId>com.dumptruckman.minecraft</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>metrics</artifactId>
-                    <groupId>org.mcstats.bukkit</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>buscript</artifactId>
-                    <groupId>com.dumptruckman.minecraft</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>junit</artifactId>
-                    <groupId>junit</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spigot-api</artifactId>
-                    <groupId>org.spigotmc</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>jettison</artifactId>
-                    <groupId>org.codehaus.jettison</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- Vault, http://dev.bukkit.org/bukkit-plugins/vault/ -->
-        <dependency>
-            <groupId>net.milkbowl.vault</groupId>
-            <artifactId>VaultAPI</artifactId>
-            <version>1.6</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.bukkit</groupId>
-                    <artifactId>bukkit</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.bukkit</groupId>
-                    <artifactId>craftbukkit</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- PermissionsEx plugin -->
-        <dependency>
-            <groupId>ru.tehkode</groupId>
-            <artifactId>PermissionsEx</artifactId>
-            <version>1.23.5-SNAPSHOT</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.bukkit</groupId>
-                    <artifactId>bukkit</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>net.gravitydevelopment.updater</groupId>
-                    <artifactId>updater</artifactId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>commons-dbcp</artifactId>
-                    <groupId>commons-dbcp</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>AccountsClient</artifactId>
-                    <groupId>com.mojang</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- bPermissions plugin -->
-        <dependency>
-            <groupId>de.bananaco</groupId>
-            <artifactId>bPermissions</artifactId>
-            <version>2.12-DEV</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.bukkit</groupId>
-                    <artifactId>bukkit</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- zPermissions plugin -->
-        <dependency>
-            <groupId>org.tyrannyofheaven.bukkit</groupId>
-            <artifactId>zPermissions</artifactId>
-            <version>1.4-SNAPSHOT</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.bukkit</groupId>
-                    <artifactId>bukkit</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.sk89q</groupId>
-                    <artifactId>worldguard</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.sk89q</groupId>
-                    <artifactId>worldedit</artifactId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>VaultAPI</artifactId>
-                    <groupId>net.milkbowl.vault</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>uuidprovider</artifactId>
-                    <groupId>net.kaikk.mc</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>ToHPluginUtils</artifactId>
-                    <groupId>org.tyrannyofheaven.bukkit</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>Residence</artifactId>
-                    <groupId>com.bekvon.bukkit</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>Factions</artifactId>
-                    <groupId>com.massivecraft</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>mcore</artifactId>
-                    <groupId>com.massivecraft</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>Factoid</artifactId>
-                    <groupId>me.tabinol.factoid</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>ebean</artifactId>
-                    <groupId>org.avaje</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>persistence-api</artifactId>
-                    <groupId>javax.persistence</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!-- AuthMeReloaded plugin -->
-        <dependency>
-            <groupId>fr.xephi</groupId>
-            <artifactId>authme</artifactId>
-            <version>5.5.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

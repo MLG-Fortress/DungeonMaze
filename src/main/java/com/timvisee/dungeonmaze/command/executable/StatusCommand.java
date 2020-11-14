@@ -5,7 +5,6 @@ import com.timvisee.dungeonmaze.DungeonMaze;
 import com.timvisee.dungeonmaze.command.CommandParts;
 import com.timvisee.dungeonmaze.command.ExecutableCommand;
 import com.timvisee.dungeonmaze.config.ConfigHandler;
-import com.timvisee.dungeonmaze.permission.PermissionsManager;
 import com.timvisee.dungeonmaze.update.UpdateChecker;
 import com.timvisee.dungeonmaze.util.MinecraftUtils;
 import com.timvisee.dungeonmaze.util.SystemUtils;
@@ -60,16 +59,11 @@ public class StatusCommand extends ExecutableCommand {
         } else
             sender.sendMessage(ChatColor.GOLD + DungeonMaze.getPluginName() + " players: " + ChatColor.DARK_RED + ChatColor.ITALIC + "Unknown!");
 
-        // Get the permissions manager
-        PermissionsManager permissionsManager = Core.getPermissionsManager();
-
         // Print the permissions manager status
-        if(permissionsManager != null) {
-            // Get the used permissions system
-            PermissionsManager.PermissionsSystemType type = permissionsManager.getUsedPermissionsSystemType();
+        if(false) {
 
-            if(type != null)
-                sender.sendMessage(ChatColor.GOLD + "Permissions System: " + ChatColor.GREEN + permissionsManager.getUsedPermissionsSystemType().getName());
+            if(true)
+                sender.sendMessage(ChatColor.GOLD + "Permissions System: " + ChatColor.GREEN);
             else
                 sender.sendMessage(ChatColor.GOLD + "Permissions System: " + ChatColor.GRAY + ChatColor.ITALIC + "None");
         } else

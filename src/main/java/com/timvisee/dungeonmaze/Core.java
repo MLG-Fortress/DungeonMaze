@@ -1,26 +1,14 @@
 package com.timvisee.dungeonmaze;
 
-import com.timvisee.dungeonmaze.api.ApiController;
-import com.timvisee.dungeonmaze.api.OldApiController;
-import com.timvisee.dungeonmaze.api.OldApiControllerService;
 import com.timvisee.dungeonmaze.command.CommandHandler;
 import com.timvisee.dungeonmaze.command.CommandHandlerService;
 import com.timvisee.dungeonmaze.config.ConfigHandler;
-import com.timvisee.dungeonmaze.listener.EventListenerManager;
 import com.timvisee.dungeonmaze.logger.DungeonMazeLogger;
 import com.timvisee.dungeonmaze.logger.LoggerManager;
-import com.timvisee.dungeonmaze.permission.PermissionsManager;
-import com.timvisee.dungeonmaze.plugin.authmereloaded.AuthMeReloadedApiProvider;
-import com.timvisee.dungeonmaze.plugin.authmereloaded.AuthMeReloadedApiProviderService;
 import com.timvisee.dungeonmaze.service.*;
-import com.timvisee.dungeonmaze.api.ApiControllerService;
 import com.timvisee.dungeonmaze.config.ConfigHandlerService;
 import com.timvisee.dungeonmaze.structure.CustomStructureManagerService;
-import com.timvisee.dungeonmaze.listener.EventListenerManagerService;
 import com.timvisee.dungeonmaze.logger.LoggerService;
-import com.timvisee.dungeonmaze.plugin.multiverse.MultiverseApiProvider;
-import com.timvisee.dungeonmaze.plugin.multiverse.MultiverseApiProviderService;
-import com.timvisee.dungeonmaze.permission.PermissionsManagerService;
 import com.timvisee.dungeonmaze.update.UpdateChecker;
 import com.timvisee.dungeonmaze.update.UpdateCheckerService;
 import com.timvisee.dungeonmaze.world.WorldManagerService;
@@ -67,11 +55,6 @@ public class Core {
     private CommandHandlerService commandHandlerService = new CommandHandlerService();
 
     /**
-     * Multiverse handler service instance.
-     */
-    private MultiverseApiProviderService multiverseApiProviderService = new MultiverseApiProviderService();
-
-    /**
      * World manager service instance.
      */
     private WorldManagerService worldManagerService = new WorldManagerService();
@@ -87,34 +70,9 @@ public class Core {
     private UpdateCheckerService updateCheckerService = new UpdateCheckerService();
 
     /**
-     * Permissions manager service instance.
-     */
-    private PermissionsManagerService permissionsManagerService = new PermissionsManagerService();
-
-    /**
      * Custom structure manager service instance.
      */
     private CustomStructureManagerService customStructureManagerService = new CustomStructureManagerService();
-
-    /**
-     * API Controller service instance.
-     */
-    private ApiControllerService apiControllerService = new ApiControllerService();
-
-    /**
-     * Old API Controller service instance.
-     */
-    private OldApiControllerService oldApiControllerService = new OldApiControllerService();
-
-    /**
-     * Event listener manager service instance.
-     */
-    private EventListenerManagerService eventListenerManagerService = new EventListenerManagerService();
-
-    /**
-     * AuthMe Reloaded handler service.
-     */
-    private AuthMeReloadedApiProviderService authMeReloadedApiProviderService = new AuthMeReloadedApiProviderService();
 
     /**
      * Defines the initialization time of the core.
@@ -157,16 +115,10 @@ public class Core {
         this.serviceManager.registerService(this.loggerService);
         this.serviceManager.registerService(this.configHandlerService);
         this.serviceManager.registerService(this.commandHandlerService);
-        this.serviceManager.registerService(this.multiverseApiProviderService);
         this.serviceManager.registerService(this.worldManagerService);
         this.serviceManager.registerService(this.dungeonChunkGridManagerService);
 //        this.serviceManager.registerService(this.updateCheckerService);
-        this.serviceManager.registerService(this.permissionsManagerService);
         this.serviceManager.registerService(this.customStructureManagerService);
-        this.serviceManager.registerService(this.apiControllerService);
-        this.serviceManager.registerService(this.oldApiControllerService);
-        this.serviceManager.registerService(this.eventListenerManagerService);
-        this.serviceManager.registerService(this.authMeReloadedApiProviderService);
 
         // Initialize all services
         if(!this.serviceManager.initServices())
@@ -296,24 +248,6 @@ public class Core {
     }
 
     /**
-     * Get the multiverse handler.
-     *
-     * @return Multiverse handler instance.
-     */
-    public static MultiverseApiProvider getMultiverseHandler() {
-        return Core.instance._getMultiverseHandler();
-    }
-
-    /**
-     * Get the multiverse handler.
-     *
-     * @return Multiverse handler instance.
-     */
-    public MultiverseApiProvider _getMultiverseHandler() {
-        return this.multiverseApiProviderService.getMultiverseApiProvider();
-    }
-
-    /**
      * Get the world manager.
      *
      * @return World manager instance.
@@ -386,24 +320,6 @@ public class Core {
     }
 
     /**
-     * Get the permissions manager.
-     *
-     * @return Permissions manager instance.
-     */
-    public static PermissionsManager getPermissionsManager() {
-        return Core.instance._getPermissionsManager();
-    }
-
-    /**
-     * Get the permissions manager.
-     *
-     * @return Permissions manager instance.
-     */
-    public PermissionsManager _getPermissionsManager() {
-        return this.permissionsManagerService.getPermissionsManager();
-    }
-
-    /**
      * Get the custom structure manager.
      *
      * @return Custom structure manager instance.
@@ -419,78 +335,6 @@ public class Core {
      */
     public CustomStructureManager _getCustomStructureManager() {
         return this.customStructureManagerService.getCustomStructureManager();
-    }
-
-    /**
-     * Get the API Controller.
-     *
-     * @return API Controller instance.
-     */
-    public static ApiController getApiController() {
-        return Core.instance._getApiController();
-    }
-
-    /**
-     * Get the API Controller.
-     *
-     * @return API Controller instance.
-     */
-    public ApiController _getApiController() {
-        return this.apiControllerService.getApiController();
-    }
-
-    /**
-     * Get the old API Controller.
-     *
-     * @return Old API Controller instance.
-     */
-    public static OldApiController getOldApiController() {
-        return Core.instance._getOldApiController();
-    }
-
-    /**
-     * Get the old API Controller.
-     *
-     * @return Old API Controller instance.
-     */
-    public OldApiController _getOldApiController() {
-        return this.oldApiControllerService.getApiController();
-    }
-
-    /**
-     * Get the event listener manager.
-     *
-     * @return Event listener manager instance.
-     */
-    public static EventListenerManager getEventListenerManager() {
-        return Core.instance._getEventListenerManager();
-    }
-
-    /**
-     * Get the event listener manager.
-     *
-     * @return Event listener manager instance.
-     */
-    public EventListenerManager _getEventListenerManager() {
-        return this.eventListenerManagerService.getEventListenerManager();
-    }
-
-    /**
-     * Get the AuthMe Reloaded handler.
-     *
-     * @return AuthMe Reloaded handler
-     */
-    public static AuthMeReloadedApiProvider getAuthMeReloadedHandler() {
-        return Core.instance._getAuthMeReloadedHandler();
-    }
-
-    /**
-     * Get the AuthMe Reloaded handler.
-     *
-     * @return AuthMe Reloaded handler.
-     */
-    public AuthMeReloadedApiProvider _getAuthMeReloadedHandler() {
-        return this.authMeReloadedApiProviderService.getAuthMeReloadedApiProvider();
     }
 
     /**

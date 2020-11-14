@@ -17,8 +17,6 @@ import org.bukkit.World;
 import org.bukkit.WorldCreator;
 import org.bukkit.configuration.file.FileConfiguration;
 
-import com.onarandombox.MultiverseCore.MultiverseCore;
-import com.onarandombox.MultiverseCore.api.MultiverseWorld;
 import com.timvisee.dungeonmaze.DungeonMaze;
 import org.bukkit.scheduler.BukkitScheduler;
 
@@ -150,22 +148,6 @@ public class WorldManager {
 
         // Load the list from the config
         List<String> worlds = config.getStringList("worlds");
-
-        // Get the multiverse core
-        MultiverseCore multiverseCore = Core.getMultiverseHandler().getMultiverseCore();
-
-        // Check whether the Multiverse core instance is valid
-        if(multiverseCore != null) {
-            for(World world : Bukkit.getWorlds()) {
-                MultiverseWorld mvWorld = multiverseCore.getMVWorldManager().getMVWorld(world);
-                try {
-                    if((mvWorld.getGenerator().contains("dungeonmaze") || mvWorld.getGenerator().contains("DungeonMaze")) && !worlds.contains(world.getName()))
-                        worlds.add(world.getName());
-
-                } catch(NoClassDefFoundError | NullPointerException ignored) {
-                }
-            }
-        }
 
         // Set the worlds
         this.dungeonMazeWorlds = worlds;

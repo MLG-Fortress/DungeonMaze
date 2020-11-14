@@ -1,13 +1,10 @@
 package com.timvisee.dungeonmaze;
 
-import com.timvisee.dungeonmaze.api.ApiController;
-import com.timvisee.dungeonmaze.api.DungeonMazeApiOld;
 import com.timvisee.dungeonmaze.command.CommandHandler;
 import com.timvisee.dungeonmaze.generator.DungeonMazeChunkGenerator;
 import com.timvisee.dungeonmaze.test.DelayedPopulator;
 import com.timvisee.dungeonmaze.util.MinecraftUtils;
 import com.timvisee.dungeonmaze.util.Profiler;
-import org.bstats.bukkit.Metrics;
 import org.bukkit.Chunk;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -76,9 +73,6 @@ public class DungeonMaze extends JavaPlugin {
 
         // Initialize the core
         initCore();
-
-        // Send metrics data
-        new Metrics(this);
 
         // Show a startup message
         Core.getLogger().info(getVersionComplete(true) + " started, took " + profiler.getTimeFormatted() + "!");
@@ -216,29 +210,6 @@ public class DungeonMaze extends JavaPlugin {
      */
     public ChunkGenerator getDungeonMazeGenerator() {
         return this.generator;
-    }
-
-    /**
-     * Get the Dungeon Maze API controller.
-     *
-     * @return Dungeon Maze API controller.
-     */
-    public ApiController getApiController() {
-        return Core.getApiController();
-    }
-
-    /**
-     * Get the old Dungeon Maze API.
-     *
-     * @return Old Dungeon Maze API.
-     *
-     * @deprecated This API is deprecated. The new Dungeon Maze API should be used instead. This API will be removed
-     * soon.
-     */
-    @SuppressWarnings({"deprecation", "UnusedDeclaration"})
-    @Deprecated
-    public DungeonMazeApiOld getDmAPI() {
-        return Core.getOldApiController().getApi();
     }
 
     /**
