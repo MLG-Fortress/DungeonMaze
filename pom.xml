@@ -165,7 +165,7 @@
                 <configuration>
                     <createDependencyReducedPom>false</createDependencyReducedPom>
                     <shadedArtifactAttached>true</shadedArtifactAttached>
-                    <finalName>${project.name}-${project.version}</finalName>
+                    <finalName>${project.name}</finalName>
 
                     <relocations>
                         <relocation>
