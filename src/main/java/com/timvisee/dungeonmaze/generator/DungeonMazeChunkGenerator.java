@@ -11,10 +11,12 @@ import com.timvisee.dungeonmaze.populator.surface.plants.TreePopulator;
 import com.timvisee.dungeonmaze.world.dungeon.chunk.DungeonChunk;
 import com.timvisee.dungeonmaze.world.dungeon.chunk.grid.DungeonRegionGrid;
 import com.timvisee.dungeonmaze.world.dungeon.chunk.grid.DungeonRegionGridManager;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
+import org.bukkit.block.data.BlockData;
 import org.bukkit.generator.BlockPopulator;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.util.noise.SimplexOctaveGenerator;
@@ -90,13 +92,22 @@ public class DungeonMazeChunkGenerator extends ChunkGenerator {
         );
     }
 
-    @Override
-    public ChunkData generateChunkData(World world, Random random, int x, int z, BiomeGrid biome) {
-        return super.generateChunkData(world, random, x, z, biome);
+    //ugly helper methods
+    public void setLayer(int y, BlockData materialId, ChunkData chunkData) {
+        // Set the layer
+        for(int x = 0; x <= 16; x++)
+            for(int z = 0; z <= 16; z++)
+                chunkData.setBlock(x, y, z, materialId);
+    }
+
+    public void setLayers(int y1, int y2, BlockData materialId, ChunkData chunkData) {
+        // Loop through each layer
+        for(int y = y1; y <= y2; y++)
+            setLayer(y, materialId, chunkData);
     }
 
     @Override
-    public short[][] generateExtBlockSections(World world, Random randSrc, int chunkX, int chunkZ, BiomeGrid biomes) {
+    public ChunkData generateChunkData(World world, Random randSrc, int chunkX, int chunkZ, BiomeGrid biomes) {
         // Get or create the dungeon chunk data
         DungeonChunk dungeonChunk;
 
@@ -123,10 +134,10 @@ public class DungeonMazeChunkGenerator extends ChunkGenerator {
         // TODO: Clear the data on the current dungeon chunk?
 
         // Create a chunk
-        BukkitChunk bukkitChunk = dungeonChunk.createBukkitChunk();
+        ChunkData chunkData = createChunkData(world);
 
         // This will set the whole floor to stone (the floor of each chunk)
-        bukkitChunk.setLayers(0, 30 + 3, Material.STONE);
+        setLayers(0, 30 + 3, Material.STONE.createBlockData(), chunkData);
 
         // The layers for each 5 rooms in the variable y
         for(int y = 30; y < 30 + (7 * 6); y += 6) {
@@ -153,13 +164,13 @@ public class DungeonMazeChunkGenerator extends ChunkGenerator {
                                 if(y2 == y + floorY)
                                     for(int xb = x; xb < x + 8; xb++)
                                         for(int zb = z; zb < z + 8; zb++)
-                                            bukkitChunk.setBlock(xb, y2, zb, Material.COBBLESTONE);
+                                            chunkData.setBlock(xb, y2, zb, Material.COBBLESTONE);
 
                                 // Fill the walls of the place with cobblestone
                                 if(((x2 == x || x2 == x + 7) && (z2 == z || z2 == z + 7)) || randX == x2 || randZ == z2)
-                                    bukkitChunk.setBlock(x2, y2, z2, Material.SMOOTH_BRICK);
+                                    chunkData.setBlock(x2, y2, z2, Material.STONE_BRICKS.createBlockData());
                                 else
-                                    bukkitChunk.clearBlock(x2, y2, z2);
+                                    chunkData.setBlock(x2, y2, z2, Material.AIR);
                             }
                         }
                     }
@@ -177,35 +188,35 @@ public class DungeonMazeChunkGenerator extends ChunkGenerator {
             for(int z = 0; z < 16; z++) {
                 double height = octave.noise(x + chunkX * 16, z + chunkZ * 16, 0.5, 0.5) * 4 + 9;
 
-                bukkitChunk.setBlock(x, 30 + (7 * 6), z, Material.COBBLESTONE);
+                chunkData.setBlock(x, 30 + (7 * 6), z, Material.COBBLESTONE);
                 for(int y = 30 + (7 * 6) + 1; y < 30 + (7 * 6) + 4; y++)
-                    bukkitChunk.setBlock(x, y, z, Material.STONE);
+                    chunkData.setBlock(x, y, z, Material.STONE);
 
                 // Get the current biome
                 Biome biome = world.getBiome((chunkX * 16) + x, (chunkZ * 16) + z);
 
                 if(biome.equals(Biome.DESERT) || biome.equals(Biome.DESERT_HILLS)) {
                     for(int y = 30 + (7 * 6) + 4; y < 30 + (7 * 6) + 2 + height; y++)
-                        bukkitChunk.setBlock(x, y, z, Material.SAND);
+                        chunkData.setBlock(x, y, z, Material.SAND);
 
-                } else if(biome.equals(Biome.MUSHROOM_ISLAND) || biome.equals(Biome.MUSHROOM_ISLAND)) {
+                } else if(biome.equals(Biome.MUSHROOM_FIELDS) || biome.equals(Biome.MUSHROOM_FIELD_SHORE)) {
                     for(int y = 30 + (7 * 6) + 4; y < 30 + (7 * 6) + 2 + height; y++)
-                        bukkitChunk.setBlock(x, y, z, Material.DIRT);
-                    bukkitChunk.setBlock(x, (int) (30 + (7 * 6) + 2 + height), z, Material.MYCEL);
+                        chunkData.setBlock(x, y, z, Material.DIRT);
+                    chunkData.setBlock(x, (int) (30 + (7 * 6) + 2 + height), z, Material.MYCELIUM);
 
                 } else {
                     for(int y = 30 + (7 * 6) + 4; y < 30 + (7 * 6) + 2 + height; y++)
-                        bukkitChunk.setBlock(x, y, z, Material.DIRT);
-                    bukkitChunk.setBlock(x, (int) (30 + (7 * 6) + 2 + height), z, Material.GRASS);
+                        chunkData.setBlock(x, y, z, Material.DIRT);
+                    chunkData.setBlock(x, (int) (30 + (7 * 6) + 2 + height), z, Material.GRASS);
                 }
             }
         }
 
         // Set the bottom layer to bedrock
-        bukkitChunk.setLayer(0, Material.BEDROCK);
+        setLayer(0, Material.BEDROCK.createBlockData(), chunkData);
 
         // Return the chunk data
-        return bukkitChunk.getChunkData();
+        return chunkData;
     }
 
     /**

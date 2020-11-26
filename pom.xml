@@ -55,7 +55,7 @@
         <!-- Compiler Version (JDK) -->
         <java.version>1.8</java.version>
         <!-- Minecraft server API versions -->
-        <spigot.version>1.12.2-R0.1-SNAPSHOT</spigot.version>
+        <spigot.version>1.16.4-R0.1-SNAPSHOT</spigot.version>
     </properties>
 
     <build>
