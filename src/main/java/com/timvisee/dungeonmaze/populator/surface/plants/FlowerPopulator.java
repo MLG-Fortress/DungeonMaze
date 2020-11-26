@@ -1,5 +1,7 @@
 package com.timvisee.dungeonmaze.populator.surface.plants;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import org.bukkit.Chunk;
@@ -7,6 +9,7 @@ import org.bukkit.Material;
 
 import com.timvisee.dungeonmaze.populator.surface.SurfaceBlockPopulator;
 import com.timvisee.dungeonmaze.populator.surface.SurfaceBlockPopulatorArgs;
+import org.bukkit.Tag;
 
 public class FlowerPopulator extends SurfaceBlockPopulator {
 
@@ -30,11 +33,10 @@ public class FlowerPopulator extends SurfaceBlockPopulator {
 
             // Spawn the flower
             if (rand.nextInt(2) == 0)
-                chunk.getBlock(xFlower, flowerY, zFlower).setType(Material.YELLOW_FLOWER);
+                chunk.getBlock(xFlower, flowerY, zFlower).setType(Material.SUNFLOWER);
 
             else {
-                chunk.getBlock(xFlower, flowerY, zFlower).setType(Material.RED_ROSE);
-                chunk.getBlock(xFlower, flowerY, zFlower).setData(getRandomFlowerType(rand));
+                chunk.getBlock(xFlower, flowerY, zFlower).setType(getRandomFlowerType(rand));
             }
         }
 	}
@@ -44,8 +46,9 @@ public class FlowerPopulator extends SurfaceBlockPopulator {
 	 * @param rand Random instance
 	 * @return Random flower type ID
 	 */
-	public byte getRandomFlowerType(Random rand) {
-		return (byte) (rand.nextInt(9));
+	public Material getRandomFlowerType(Random rand) {
+		List<Material> flowers = new ArrayList<>(Tag.FLOWERS.getValues());
+		return flowers.get(rand.nextInt(flowers.size()));
 	}
 
     @Override

@@ -60,8 +60,7 @@ public class OasisChunkPopulator extends ChunkBlockPopulator {
         for(int x = 0; x < 16; x++) {
             for(int z = 0; z < 16; z++) {
                 if(rand.nextInt(100) < CHANCE_CLAYINDIRT) {
-                    chunk.getBlock(x, 31, z).setType(Material.LONG_GRASS);
-                    chunk.getBlock(x, 31, z).setData((byte) 1);
+                    chunk.getBlock(x, 31, z).setType(Material.TALL_GRASS);
                 }
             }
         }
@@ -81,10 +80,10 @@ public class OasisChunkPopulator extends ChunkBlockPopulator {
             chunk.getBlock(11 + treeOffsetX, 30, z + treeOffsetZ).setType(Material.WATER);
 
         // Generate some sugar canes
-        chunk.getBlock(6 + treeOffsetX, 31, 6 + treeOffsetZ).setType(Material.SUGAR_CANE_BLOCK);
-        chunk.getBlock(6 + treeOffsetX, 31, 10 + treeOffsetZ).setType(Material.SUGAR_CANE_BLOCK);
-        chunk.getBlock(10 + treeOffsetX, 31, 6 + treeOffsetZ).setType(Material.SUGAR_CANE_BLOCK);
-        chunk.getBlock(10 + treeOffsetX, 31, 10 + treeOffsetZ).setType(Material.SUGAR_CANE_BLOCK);
+        chunk.getBlock(6 + treeOffsetX, 31, 6 + treeOffsetZ).setType(Material.SUGAR_CANE);
+        chunk.getBlock(6 + treeOffsetX, 31, 10 + treeOffsetZ).setType(Material.SUGAR_CANE);
+        chunk.getBlock(10 + treeOffsetX, 31, 6 + treeOffsetZ).setType(Material.SUGAR_CANE);
+        chunk.getBlock(10 + treeOffsetX, 31, 10 + treeOffsetZ).setType(Material.SUGAR_CANE);
 
         // Random tree type and generate the tree
         TreeType treeType;

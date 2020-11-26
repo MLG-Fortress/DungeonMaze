@@ -53,8 +53,8 @@ public class PoolPopulator extends MazeRoomBlockPopulator {
     }
 	
 	public enum LiquidType {
-		WATER(Material.STATIONARY_WATER),
-		LAVA(Material.STATIONARY_LAVA);
+		WATER(Material.WATER),
+		LAVA(Material.LAVA);
 
         /** The liquid type as a Bukkit material. */
 		private final Material mat;
