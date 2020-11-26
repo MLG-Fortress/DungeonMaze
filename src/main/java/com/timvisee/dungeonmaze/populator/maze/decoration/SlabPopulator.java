@@ -47,13 +47,9 @@ public class SlabPopulator extends MazeRoomBlockPopulator {
         // Make sure the slab could be placed on the specified position
         if(baseBlock.getType() != Material.AIR && slabBlock.getType() == Material.AIR) {
             // Set the material type to a slab
-            slabBlock.setType(Material.STEP);
+            slabBlock.setType(Material.STONE_SLAB);
 
             // Set the proper data value
-            if(!ceiling)
-                slabBlock.setData((byte) 3);
-            else
-                slabBlock.setData((byte) 11);
         }
 	}
 	

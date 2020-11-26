@@ -45,7 +45,6 @@ public class PumpkinPopulator extends MazeRoomBlockPopulator {
                     slabBlock.setType(Material.JACK_O_LANTERN);
 
                 // Randomly rotate the pumpkin
-                slabBlock.setData((byte) rand.nextInt(4));
             }
         }
     }

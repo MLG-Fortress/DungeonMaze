@@ -23,16 +23,6 @@ public class MaterialUtils {
         return (short) material.getId();
     }
 
-    /**
-     * Get the material ID of a block.
-     *
-     * @param block The block to get the material ID for.
-     *
-     * @return The material ID of the block.
-     */
-    public static short getMaterialId(Block block) {
-        return (short) block.getTypeId();
-    }
 
     /**
      * Get the material by it's ID.
@@ -41,9 +31,7 @@ public class MaterialUtils {
      *
      * @return The material of the ID.
      */
-    public static Material getMaterialById(int id) {
-        return Material.getMaterial(id);
-    }
+
 
     /**
      * Get the material data of a block.
@@ -73,9 +61,7 @@ public class MaterialUtils {
      * @param block The block to set.
      * @param materialId The material ID.
      */
-    public static void setBlockType(Block block, int materialId) {
-        block.setTypeId(materialId);
-    }
+
 
     /**
      * Set the type of a block.
@@ -89,7 +75,7 @@ public class MaterialUtils {
     public static boolean setBlockType(Block block, int materialId, int rawData) {
         // Get the block state and set the material by ID
         BlockState state = block.getState();
-        state.setTypeId(materialId);
+
 
         // Apply the raw data
         if(rawData != 0)

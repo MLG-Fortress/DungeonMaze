@@ -68,21 +68,6 @@ public class StairsPopulator extends MazeRoomBlockPopulator {
         chunk.getBlock(x + 5, yFloor + 1 + 7, z + 5).setType(Material.AIR);
         chunk.getBlock(x + 5, yFloor + 1 + 7, z + 6).setType(Material.AIR);
 
-        // Properly set the data values of the stair blocks
-        // TODO: Use the stair block instance instead (because of deprecation)
-        chunk.getBlock(x + 5, yFloor + 1, z + 2).setData((byte) 2);
-        chunk.getBlock(x + 6, yFloor + 1, z + 2).setData((byte) 2);
-        chunk.getBlock(x + 5, yFloor + 1 + 1, z + 3).setData((byte) 2);
-        chunk.getBlock(x + 6, yFloor + 1 + 1, z + 3).setData((byte) 2);
-        chunk.getBlock(x + 5, yFloor + 1 + 2, z + 4).setData((byte) 2);
-        chunk.getBlock(x + 6, yFloor + 1 + 2, z + 4).setData((byte) 2);
-        chunk.getBlock(x + 4, yFloor + 1 + 3, z + 5).setData((byte) 1);
-        chunk.getBlock(x + 4, yFloor + 1 + 3, z + 6).setData((byte) 1);
-        chunk.getBlock(x + 3, yFloor + 1 + 4, z + 5).setData((byte) 1);
-        chunk.getBlock(x + 3, yFloor + 1 + 4, z + 6).setData((byte) 1);
-        chunk.getBlock(x + 2, yFloor + 1 + 5, z + 5).setData((byte) 1);
-        chunk.getBlock(x + 2, yFloor + 1 + 5, z + 6).setData((byte) 1);
-
         // Put some supports under the staircase
         chunk.getBlock(x + 5, yFloor + 1 + 1, z + 4).setType(Material.COBBLESTONE);
         chunk.getBlock(x + 6, yFloor + 1 + 1, z + 4).setType(Material.COBBLESTONE);

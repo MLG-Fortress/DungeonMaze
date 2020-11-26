@@ -30,7 +30,7 @@ public class CrackedStoneBrickPopulator extends MazeRoomBlockPopulator {
 
         // Change the block if it's currently a smooth stone brick block
         if(crackedStoneBlock.getType() == Material.STONE_BRICKS)
-            crackedStoneBlock.setData((byte) 2);
+            crackedStoneBlock.setType(Material.CRACKED_STONE_BRICKS);
 	}
 
     @Override

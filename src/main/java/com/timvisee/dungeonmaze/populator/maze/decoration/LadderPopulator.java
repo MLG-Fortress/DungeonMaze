@@ -56,7 +56,6 @@ public class LadderPopulator extends MazeRoomBlockPopulator {
         if(chunk.getBlock(startX, startY, startZ).getType() == Material.AIR) {
             for (int ladderY=startY; ladderY <= startY + 8; ladderY++) {
                 chunk.getBlock(startX, ladderY, startZ).setType(Material.LADDER);
-                chunk.getBlock(startX, ladderY, startZ).setData(ladderData);
             }
         }
 	}
