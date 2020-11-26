@@ -174,7 +174,7 @@ public class BossRoomHardPopulator extends MazeLayerBlockPopulator {
             Block spawnerBlock = chunk.getBlock(x + 8, y + 2, z + 7);
 
             // Call the spawner generation event
-            GenerationSpawnerEvent event = new GenerationSpawnerEvent(spawnerBlock, EntityType.PIG_ZOMBIE, GenerationSpawnerEvent.GenerationSpawnerCause.BOSSROOM_HARD, rand);
+            GenerationSpawnerEvent event = new GenerationSpawnerEvent(spawnerBlock, EntityType.ZOMBIFIED_PIGLIN, GenerationSpawnerEvent.GenerationSpawnerCause.BOSSROOM_HARD, rand);
             Bukkit.getServer().getPluginManager().callEvent(event);
 
             // Apply the event
@@ -262,51 +262,51 @@ public class BossRoomHardPopulator extends MazeLayerBlockPopulator {
 
         // Put the items in the list
 		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.TORCH, 16, (short) 0));
+			items.add(new ItemStack(Material.TORCH, 16));
 		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.TORCH, 20, (short) 0));
+			items.add(new ItemStack(Material.TORCH, 20));
 		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.ARROW, 24, (short) 0));
+			items.add(new ItemStack(Material.ARROW, 24));
 		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.ARROW, 1, (short) 0));
+			items.add(new ItemStack(Material.ARROW, 1));
 		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.DIAMOND, 3, (short) 0));
+			items.add(new ItemStack(Material.DIAMOND, 3));
 		if(random.nextInt(100) < 50)
-			items.add(new ItemStack(Material.IRON_INGOT, 3, (short) 0));
+			items.add(new ItemStack(Material.IRON_INGOT, 3));
 		if(random.nextInt(100) < 50)
-			items.add(new ItemStack(Material.GOLD_INGOT, 3, (short) 0));
+			items.add(new ItemStack(Material.GOLD_INGOT, 3));
 		if(random.nextInt(100) < 50)
-			items.add(new ItemStack(Material.IRON_SWORD, 1, (short) 0));
+			items.add(new ItemStack(Material.IRON_SWORD, 1));
 		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.MUSHROOM_SOUP, 1, (short) 0));
+			items.add(new ItemStack(Material.MUSHROOM_STEW, 1));
 		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.IRON_HELMET, 1, (short) 0));
+			items.add(new ItemStack(Material.IRON_HELMET, 1));
 		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.IRON_CHESTPLATE, 1, (short) 0));
+			items.add(new ItemStack(Material.IRON_CHESTPLATE, 1));
 		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.IRON_LEGGINGS, 1, (short) 0));
+			items.add(new ItemStack(Material.IRON_LEGGINGS, 1));
 		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.IRON_BOOTS, 1, (short) 0));
+			items.add(new ItemStack(Material.IRON_BOOTS, 1));
 		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.DIAMOND_HELMET, 1, (short) 0));
+			items.add(new ItemStack(Material.DIAMOND_HELMET, 1));
 		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.DIAMOND_CHESTPLATE, 1, (short) 0));
+			items.add(new ItemStack(Material.DIAMOND_CHESTPLATE, 1));
 		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.DIAMOND_LEGGINGS, 1, (short) 0));
+			items.add(new ItemStack(Material.DIAMOND_LEGGINGS, 1));
 		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.DIAMOND_BOOTS, 1, (short) 0));
+			items.add(new ItemStack(Material.DIAMOND_BOOTS, 1));
 		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.FLINT, 1, (short) 0));
+			items.add(new ItemStack(Material.FLINT, 1));
 		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.GRILLED_PORK, 1, (short) 0));
+			items.add(new ItemStack(Material.COOKED_PORKCHOP, 1));
 		if(random.nextInt(100) < 10)
-			items.add(new ItemStack(Material.GOLDEN_APPLE, 1, (short) 0));
+			items.add(new ItemStack(Material.GOLDEN_APPLE, 1));
 		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.REDSTONE, 7, (short) 0));
+			items.add(new ItemStack(Material.REDSTONE, 7));
 		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.CAKE, 1, (short) 0));
+			items.add(new ItemStack(Material.CAKE, 1));
 		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.COOKIE, 8, (short) 0));
+			items.add(new ItemStack(Material.COOKIE, 8));
 		
 		int itemCountInChest;
 		switch (random.nextInt(8)) {

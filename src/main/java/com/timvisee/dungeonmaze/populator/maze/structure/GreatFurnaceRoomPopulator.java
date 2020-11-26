@@ -61,28 +61,24 @@ public class GreatFurnaceRoomPopulator extends MazeRoomBlockPopulator {
 
         // Furnace base
         chunk.getBlock(x + 2, y + 2, z + 2).setType(Material.FURNACE);
-        chunk.getBlock(x + 2, y + 2, z + 2).setData((byte) 2);
         addItemsToFurnace(rand, (Furnace) chunk.getBlock(x + 2, y + 2, z + 2).getState());
         chunk.getBlock(x + 3, y + 2, z + 2).setType(Material.GLASS);
         chunk.getBlock(x + 4, y + 2, z + 2).setType(Material.GLASS);
         chunk.getBlock(x + 5, y + 2, z + 2).setType(Material.FURNACE);
-        chunk.getBlock(x + 5, y + 2, z + 2).setData((byte) 2);
         addItemsToFurnace(rand, (Furnace) chunk.getBlock(x + 5, y + 2, z + 2).getState());
         chunk.getBlock(x + 2, y + 2, z + 3).setType(Material.GLASS);
-        chunk.getBlock(x + 3, y + 2, z + 3).setType(Material.STATIONARY_LAVA);
-        chunk.getBlock(x + 4, y + 2, z + 3).setType(Material.STATIONARY_LAVA);
+        chunk.getBlock(x + 3, y + 2, z + 3).setType(Material.LAVA);
+        chunk.getBlock(x + 4, y + 2, z + 3).setType(Material.LAVA);
         chunk.getBlock(x + 5, y + 2, z + 3).setType(Material.GLASS);
         chunk.getBlock(x + 2, y + 2, z + 4).setType(Material.GLASS);
-        chunk.getBlock(x + 3, y + 2, z + 4).setType(Material.STATIONARY_LAVA);
-        chunk.getBlock(x + 4, y + 2, z + 4).setType(Material.STATIONARY_LAVA);
+        chunk.getBlock(x + 3, y + 2, z + 4).setType(Material.LAVA);
+        chunk.getBlock(x + 4, y + 2, z + 4).setType(Material.LAVA);
         chunk.getBlock(x + 5, y + 2, z + 4).setType(Material.GLASS);
         chunk.getBlock(x + 2, y + 2, z + 5).setType(Material.FURNACE);
-        chunk.getBlock(x + 2, y + 2, z + 5).setData((byte) 3);
         addItemsToFurnace(rand, (Furnace) chunk.getBlock(x + 2, y + 2, z + 5).getState());
         chunk.getBlock(x + 3, y + 2, z + 5).setType(Material.GLASS);
         chunk.getBlock(x + 4, y + 2, z + 5).setType(Material.GLASS);
         chunk.getBlock(x + 5, y + 2, z + 5).setType(Material.FURNACE);
-        chunk.getBlock(x + 5, y + 2, z + 5).setData((byte) 3);
         addItemsToFurnace(rand, (Furnace) chunk.getBlock(x + 5, y + 2, z + 5).getState());
 
         // Furnace pipe
@@ -102,59 +98,59 @@ public class GreatFurnaceRoomPopulator extends MazeRoomBlockPopulator {
 
 		// Add the items to the list
 		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.GOLD_BLOCK, 1, (short) 0));
+			items.add(new ItemStack(Material.GOLD_BLOCK, 1));
 		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.IRON_BLOCK, 1, (short) 0));
+			items.add(new ItemStack(Material.IRON_BLOCK, 1));
 		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.BRICK, 1, (short) 0));
+			items.add(new ItemStack(Material.BRICK, 1));
 		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.COAL, 1, (short) 0));
+			items.add(new ItemStack(Material.COAL, 1));
 		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.COAL, 1, (short) 1));
+			items.add(new ItemStack(Material.COAL, 1));
 		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.IRON_INGOT, 2, (short) 0));
+			items.add(new ItemStack(Material.IRON_INGOT, 2));
 		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.IRON_INGOT, 4, (short) 0));
+			items.add(new ItemStack(Material.IRON_INGOT, 4));
 		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.GOLD_INGOT, 2, (short) 0));
+			items.add(new ItemStack(Material.GOLD_INGOT, 2));
 		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.GOLD_INGOT, 4, (short) 0));
+			items.add(new ItemStack(Material.GOLD_INGOT, 4));
 		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.BREAD, 1, (short) 0));
+			items.add(new ItemStack(Material.BREAD, 1));
 		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.BUCKET, 1, (short) 0));
+			items.add(new ItemStack(Material.BUCKET, 1));
 		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.COOKED_CHICKEN, 2, (short) 0));
+			items.add(new ItemStack(Material.COOKED_CHICKEN, 2));
 		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.COOKED_CHICKEN, 4, (short) 0));
+			items.add(new ItemStack(Material.COOKED_CHICKEN, 4));
 		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.FLINT, 3, (short) 0));
+			items.add(new ItemStack(Material.FLINT, 3));
 		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.FLINT, 5, (short) 0));
+			items.add(new ItemStack(Material.FLINT, 5));
 		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.GRILLED_PORK, 1, (short) 0));
+			items.add(new ItemStack(Material.COOKED_PORKCHOP, 1));
 		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.COOKED_FISH, 1, (short) 0));
+			items.add(new ItemStack(Material.COOKED_COD, 1));
 		if(random.nextInt(100) < 30)
-			items.add(new ItemStack(Material.ENDER_PEARL, 1, (short) 0));
+			items.add(new ItemStack(Material.ENDER_PEARL, 1));
 		if(random.nextInt(100) < 30)
-			items.add(new ItemStack(Material.BLAZE_ROD, 1, (short) 0));
+			items.add(new ItemStack(Material.BLAZE_ROD, 1));
 		if(random.nextInt(100) < 30)
-			items.add(new ItemStack(Material.GHAST_TEAR, 1, (short) 0));
+			items.add(new ItemStack(Material.GHAST_TEAR, 1));
 		if(random.nextInt(100) < 45)
-			items.add(new ItemStack(Material.GOLD_NUGGET, 1, (short) 0));
+			items.add(new ItemStack(Material.GOLD_NUGGET, 1));
 		if(random.nextInt(100) < 30)
-			items.add(new ItemStack(Material.NETHER_STALK, 1, (short) 0));
+			items.add(new ItemStack(Material.NETHER_WART, 1));
 		if(random.nextInt(100) < 30)
-			items.add(new ItemStack(Material.SPIDER_EYE, 1, (short) 0));
+			items.add(new ItemStack(Material.SPIDER_EYE, 1));
 		if(random.nextInt(100) < 30)
-			items.add(new ItemStack(Material.BLAZE_POWDER, 1, (short) 0));
+			items.add(new ItemStack(Material.BLAZE_POWDER, 1));
 		if(random.nextInt(100) < 30)
-			items.add(new ItemStack(Material.MAGMA_CREAM, 1, (short) 0));
+			items.add(new ItemStack(Material.MAGMA_CREAM, 1));
 		if(random.nextInt(100) < 30)
-			items.add(new ItemStack(Material.EYE_OF_ENDER, 1, (short) 0));
+			items.add(new ItemStack(Material.ENDER_EYE, 1));
 		if(random.nextInt(100) < 30)
-			items.add(new ItemStack(Material.SPECKLED_MELON, 1, (short) 0));
+			items.add(new ItemStack(Material.GLISTERING_MELON_SLICE, 1));
 		
 		// Add the selected items into the furnace
 		if(random.nextInt(100) < 60)

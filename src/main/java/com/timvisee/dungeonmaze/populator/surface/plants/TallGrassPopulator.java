@@ -27,8 +27,7 @@ public class TallGrassPopulator extends SurfaceBlockPopulator {
         if(chunk.getBlock(xGrass, ySurface, zGrass).getType() == Material.GRASS) {
             final int yGrass = ySurface + 1;
 
-            chunk.getBlock(xGrass, yGrass, zGrass).setType(Material.LONG_GRASS);
-            chunk.getBlock(xGrass, yGrass, zGrass).setData((byte) 1);
+            chunk.getBlock(xGrass, yGrass, zGrass).setType(Material.TALL_GRASS);
         }
 	}
 

@@ -246,7 +246,7 @@ public class AbandonedDefenceCastleRoomPopulator extends MazeRoomBlockPopulator 
 		furnace.update();
 	}
 
-	private List<ItemStack> genChestContent(Random random) {
+	public static List<ItemStack> genChestContent(Random random) {
         // Create a list to put the chest items in
 		List<ItemStack> items = new ArrayList<>();
 

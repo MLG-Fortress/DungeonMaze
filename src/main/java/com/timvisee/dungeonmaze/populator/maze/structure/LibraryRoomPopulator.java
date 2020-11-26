@@ -54,16 +54,16 @@ public class LibraryRoomPopulator extends MazeRoomBlockPopulator {
         // Make stone walls on each side of the room
         for(int x2 = x + 1; x2 <= x + 6; x2 += 1)
             for(int y2 = yFloor; y2 <= yCeiling + 5; y2 += 1)
-                chunk.getBlock(x2, y2, z).setType(Material.SMOOTH_BRICK);
+                chunk.getBlock(x2, y2, z).setType(Material.STONE_BRICKS);
         for(int x2 = x + 1; x2 <= x + 6; x2 += 1)
             for(int y2 = yFloor; y2 <= yCeiling + 5; y2 += 1)
-                chunk.getBlock(x2, y2, z + 7).setType(Material.SMOOTH_BRICK);
+                chunk.getBlock(x2, y2, z + 7).setType(Material.STONE_BRICKS);
         for(int z2 = z + 1; z2 <= z + 6; z2 += 1)
             for(int y2 = yFloor; y2 <= yCeiling + 5; y2 += 1)
-                chunk.getBlock(x, y2, z2).setType(Material.SMOOTH_BRICK);
+                chunk.getBlock(x, y2, z2).setType(Material.STONE_BRICKS);
         for(int z2 = z + 1; z2 <= z + 6; z2 += 1)
             for(int y2 = yFloor; y2 <= yCeiling + 5; y2 += 1)
-                chunk.getBlock(x + 7, y2, z2).setType(Material.SMOOTH_BRICK);
+                chunk.getBlock(x + 7, y2, z2).setType(Material.STONE_BRICKS);
 
         // Generate some holes in the wall to make some kind of doors
         for(int x2 = x + 3; x2 <= x + 4; x2 += 1)
@@ -103,8 +103,8 @@ public class LibraryRoomPopulator extends MazeRoomBlockPopulator {
         chunk.getBlock(x + 3, yFloor +1, z + 4).setType(Material.BOOKSHELF);
         chunk.getBlock(x + 4, yFloor +1, z + 3).setType(Material.BOOKSHELF);
         // Add the two enchant tables
-        chunk.getBlock(x + 3, yFloor +2, z + 4).setType(Material.ENCHANTMENT_TABLE);
-        chunk.getBlock(x + 4, yFloor +2, z + 3).setType(Material.ENCHANTMENT_TABLE);
+        chunk.getBlock(x + 3, yFloor +2, z + 4).setType(Material.ENCHANTING_TABLE);
+        chunk.getBlock(x + 4, yFloor +2, z + 3).setType(Material.ENCHANTING_TABLE);
         // Add the two chests
         chunk.getBlock(x + 3, yFloor + 1, z + 3).setType(Material.CHEST);
 
@@ -135,109 +135,14 @@ public class LibraryRoomPopulator extends MazeRoomBlockPopulator {
         }
 
         // Add 4 lanterns on each side of the room near the book shelves
-        chunk.getBlock(x + 2, yFloor + 2, z + 1).setType(Material.TORCH);
-        chunk.getBlock(x + 2, yFloor + 2, z + 1).setData((byte) 3);
-        chunk.getBlock(x + 6, yFloor + 2, z + 2).setType(Material.TORCH);
-        chunk.getBlock(x + 6, yFloor + 2, z + 2).setData((byte) 2);
-        chunk.getBlock(x + 1, yFloor + 2, z + 5).setType(Material.TORCH);
-        chunk.getBlock(x + 1, yFloor + 2, z + 5).setData((byte) 1);
-        chunk.getBlock(x + 5, yFloor + 2, z + 6).setType(Material.TORCH);
-        chunk.getBlock(x + 5, yFloor + 2, z + 6).setData((byte) 4);
+        chunk.getBlock(x + 2, yFloor + 2, z + 1).setType(Material.LANTERN);
+        chunk.getBlock(x + 6, yFloor + 2, z + 2).setType(Material.LANTERN);
+        chunk.getBlock(x + 1, yFloor + 2, z + 5).setType(Material.LANTERN);
+        chunk.getBlock(x + 5, yFloor + 2, z + 6).setType(Material.LANTERN);
 	}
 	
 	public List<ItemStack> genChestContent(Random random) {
-		// Create a list to put all the chest contents in
-		List<ItemStack> items = new ArrayList<>();
-
-		// Add the items to the list
-		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.TORCH, 16, (short) 0));
-		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.TORCH, 20, (short) 0));
-		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.ARROW, 24, (short) 0));
-		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.ARROW, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.DIAMOND, 3, (short) 0));
-		if(random.nextInt(100) < 50)
-			items.add(new ItemStack(Material.IRON_INGOT, 3, (short) 0));
-		if(random.nextInt(100) < 50)
-			items.add(new ItemStack(Material.GOLD_INGOT, 3, (short) 0));
-		if(random.nextInt(100) < 50)
-			items.add(new ItemStack(Material.IRON_SWORD, 1, (short) 0));
-		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.MUSHROOM_SOUP, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.IRON_HELMET, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.IRON_CHESTPLATE, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.IRON_LEGGINGS, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.IRON_BOOTS, 1, (short) 0));
-		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.DIAMOND_HELMET, 1, (short) 0));
-		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.DIAMOND_CHESTPLATE, 1, (short) 0));
-		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.DIAMOND_LEGGINGS, 1, (short) 0));
-		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.DIAMOND_BOOTS, 1, (short) 0));
-		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.FLINT, 1, (short) 0));
-		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.GRILLED_PORK, 1, (short) 0));
-		if(random.nextInt(100) < 10)
-			items.add(new ItemStack(Material.GOLDEN_APPLE, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.REDSTONE, 7, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.CAKE, 1, (short) 0));
-		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.COOKIE, 8, (short) 0));
-
-		// Determine the number of items to put in the chest
-		int itemCountInChest;
-		switch (random.nextInt(8)) {
-		case 0:
-			itemCountInChest = 2;
-			break;
-		case 1:
-			itemCountInChest = 2;
-			break;
-		case 2:
-			itemCountInChest = 3;
-			break;
-		case 3:
-			itemCountInChest = 3;
-			break;
-		case 4:
-			itemCountInChest = 4;
-			break;
-		case 5:
-			itemCountInChest = 4;
-			break;
-		case 6:
-			itemCountInChest = 4;
-			break;
-		case 7:
-			itemCountInChest = 5;
-			break;
-		default:
-			itemCountInChest = 4;
-			break;
-		}
-
-		// Create the result list
-		List<ItemStack> result = new ArrayList<>();
-		
-		// Add the selected items randomly
-		for(int i = 0; i < itemCountInChest; i++)
-			result.add(items.get(random.nextInt(items.size())));
-
-		// Return the result
-		return result;
+		return AbandonedDefenceCastleRoomPopulator.genChestContent(random);
 	}
 
     @Override

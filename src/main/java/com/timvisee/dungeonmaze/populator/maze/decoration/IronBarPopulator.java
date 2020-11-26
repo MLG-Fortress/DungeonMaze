@@ -47,7 +47,7 @@ public class IronBarPopulator extends MazeRoomBlockPopulator {
 
         // Specify the bars base block
         Block barsBase = chunk.getBlock(blockX, blockY, blockZ);
-        if(barsBase.getType() == Material.COBBLESTONE || barsBase.getType() == Material.MOSSY_COBBLESTONE || barsBase.getType() == Material.SMOOTH_BRICK) {
+        if(barsBase.getType() == Material.COBBLESTONE || barsBase.getType() == Material.MOSSY_COBBLESTONE || barsBase.getType() == Material.STONE_BRICKS) {
             // Set the block type to the iron bars
             barsBase.setType(Material.IRON_BARS);
 

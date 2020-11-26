@@ -75,7 +75,7 @@ public class WebPopulator extends MazeRoomBlockPopulator {
         }
 
         // Place the web
-        chunk.getBlock(xWeb, yWeb, zWeb).setType(Material.WEB);
+        chunk.getBlock(xWeb, yWeb, zWeb).setType(Material.COBWEB);
 	}
 	
 	/**

@@ -7,7 +7,9 @@ import java.util.Random;
 import org.bukkit.Chunk;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.block.BlockFace;
 import org.bukkit.block.Chest;
+import org.bukkit.block.data.type.Door;
 import org.bukkit.inventory.ItemStack;
 
 import com.timvisee.dungeonmaze.DungeonMaze;
@@ -80,105 +82,15 @@ public class ArmoryRoomPopulator extends MazeRoomBlockPopulator {
         chunk.getBlock(x + 5, yFloor + 1, z + 4).setType(Material.CHEST);
 
         // Iron doors
-        chunk.getBlock(x + 3, yFloor + 1, z + 1).setType(Material.IRON_DOOR_BLOCK);
-        chunk.getBlock(x + 3, yFloor + 1, z + 1).setData((byte) 0);
-        chunk.getBlock(x + 4, yFloor + 1, z + 1).setType(Material.IRON_DOOR_BLOCK);
-        chunk.getBlock(x + 4, yFloor + 1, z + 1).setData((byte) 3);
-        chunk.getBlock(x + 3, yFloor + 2, z + 1).setType(Material.IRON_DOOR_BLOCK);
-        chunk.getBlock(x + 3, yFloor + 2, z + 1).setData((byte) 8);
-        chunk.getBlock(x + 4, yFloor + 2, z + 1).setType(Material.IRON_DOOR_BLOCK);
-        chunk.getBlock(x + 4, yFloor + 2, z + 1).setData((byte) 11);
-	}
-	
-	public void addItemsToChest(Random random, Chest chest) {
-		// Create a list to put the chest items in
-		List<ItemStack> items = new ArrayList<>();
-
-		// Add the items to the list
-		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.TORCH, 16, (short) 0));
-		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.TORCH, 20, (short) 0));
-		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.ARROW, 24, (short) 0));
-		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.ARROW, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.DIAMOND, 3, (short) 0));
-		if(random.nextInt(100) < 50)
-			items.add(new ItemStack(Material.IRON_INGOT, 3, (short) 0));
-		if(random.nextInt(100) < 50)
-			items.add(new ItemStack(Material.GOLD_INGOT, 3, (short) 0));
-		if(random.nextInt(100) < 50)
-			items.add(new ItemStack(Material.IRON_SWORD, 1, (short) 0));
-		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.MUSHROOM_SOUP, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.IRON_HELMET, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.IRON_CHESTPLATE, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.IRON_LEGGINGS, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.IRON_BOOTS, 1, (short) 0));
-		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.DIAMOND_HELMET, 1, (short) 0));
-		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.DIAMOND_CHESTPLATE, 1, (short) 0));
-		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.DIAMOND_LEGGINGS, 1, (short) 0));
-		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.DIAMOND_BOOTS, 1, (short) 0));
-		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.FLINT, 1, (short) 0));
-		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.GRILLED_PORK, 1, (short) 0));
-		if(random.nextInt(100) < 10)
-			items.add(new ItemStack(Material.GOLDEN_APPLE, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.RED_SANDSTONE_STAIRS, 7, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.CAKE, 1, (short) 0));
-		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.COOKIE, 8, (short) 0));
-
-		// Determine the number of items to add to the chest
-		int itemCountInChest;
-		switch (random.nextInt(8)) {
-		case 0:
-			itemCountInChest = 2;
-			break;
-		case 1:
-			itemCountInChest = 2;
-			break;
-		case 2:
-			itemCountInChest = 3;
-			break;
-		case 3:
-			itemCountInChest = 3;
-			break;
-		case 4:
-			itemCountInChest = 4;
-			break;
-		case 5:
-			itemCountInChest = 4;
-			break;
-		case 6:
-			itemCountInChest = 4;
-			break;
-		case 7:
-			itemCountInChest = 5;
-			break;
-		default:
-			itemCountInChest = 4;
-		}
-		
-		// Add the selected items to a random place inside the chest
-		for (int i = 0; i < itemCountInChest; i++)
-			chest.getInventory().setItem(random.nextInt(chest.getInventory().getSize()), items.get(random.nextInt(items.size())));
-
-		// Update the chest
-		chest.update();
+		Door door = (Door)Material.IRON_DOOR.createBlockData();
+        chunk.getBlock(x + 3, yFloor + 1, z + 1).setBlockData(door);
+		door.setFacing(BlockFace.NORTH);
+        chunk.getBlock(x + 4, yFloor + 1, z + 1).setBlockData(door);
+		door.setFacing(BlockFace.EAST);
+		door.setOpen(true);
+        chunk.getBlock(x + 3, yFloor + 2, z + 1).setBlockData(door);
+		door.setFacing(BlockFace.NORTH);
+        chunk.getBlock(x + 4, yFloor + 2, z + 1).setBlockData(door);
 	}
 
     @Override

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.timvisee.dungeonmaze.populator.maze.structure.AbandonedDefenceCastleRoomPopulator;
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
 import org.bukkit.Material;
@@ -89,135 +90,7 @@ public class ChestPopulator extends MazeRoomBlockPopulator {
 	}
 
 	private List<ItemStack> generateChestContents(Random random) {
-		// TODO: Use class for this, to also add feature to re loot chests
-        // Create a list to put the item stacks in
-		List<ItemStack> items = new ArrayList<>();
-
-        // Add items to the stack
-		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.TORCH, 4, (short) 0));
-		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.TORCH, 8, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.TORCH, 12, (short) 0));
-		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.APPLE, 1, (short) 0));
-		if(random.nextInt(100) < 10)
-			items.add(new ItemStack(Material.ARROW, 16, (short) 0));
-		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.ARROW, 24, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.DIAMOND, 1, (short) 0));
-		if(random.nextInt(100) < 50)
-			items.add(new ItemStack(Material.IRON_INGOT, 1, (short) 0));
-		if(random.nextInt(100) < 60)
-			items.add(new ItemStack(Material.GOLD_INGOT, 1, (short) 0));
-		if(random.nextInt(100) < 10)
-			items.add(new ItemStack(Material.IRON_SWORD, 1, (short) 0));
-		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.WOOD_SWORD, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.STONE_SWORD, 1, (short) 0));
-		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.WHEAT, 1, (short) 0));
-		if(random.nextInt(100) < 10)
-			items.add(new ItemStack(Material.WHEAT, 2, (short) 0));
-		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.WHEAT, 3, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.BREAD, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.LEATHER_HELMET, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.LEATHER_CHESTPLATE, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.LEATHER_LEGGINGS, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.LEATHER_BOOTS, 1, (short) 0));
-		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.CHAINMAIL_HELMET, 1, (short) 0));
-		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.CHAINMAIL_CHESTPLATE, 1, (short) 0));
-		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.CHAINMAIL_LEGGINGS, 1, (short) 0));
-		if(random.nextInt(100) < 40)
-			items.add(new ItemStack(Material.CHAINMAIL_BOOTS, 1, (short) 0));
-		if(random.nextInt(100) < 10)
-			items.add(new ItemStack(Material.IRON_HELMET, 1, (short) 0));
-		if(random.nextInt(100) < 10)
-			items.add(new ItemStack(Material.IRON_CHESTPLATE, 1, (short) 0));
-		if(random.nextInt(100) < 10)
-			items.add(new ItemStack(Material.IRON_LEGGINGS, 1, (short) 0));
-		if(random.nextInt(100) < 10)
-			items.add(new ItemStack(Material.IRON_BOOTS, 1, (short) 0));
-		if(random.nextInt(100) < 30)
-			items.add(new ItemStack(Material.FLINT, 3, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.FLINT, 5, (short) 0));
-		if(random.nextInt(100) < 10)
-			items.add(new ItemStack(Material.FLINT, 7, (short) 0));
-		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.PORK, 1, (short) 0));
-		if(random.nextInt(100) < 10)
-			items.add(new ItemStack(Material.GRILLED_PORK, 1, (short) 0));
-		if(random.nextInt(100) < 15)
-			items.add(new ItemStack(Material.REDSTONE, 5, (short) 0));
-		if(random.nextInt(100) < 10)
-			items.add(new ItemStack(Material.REDSTONE, 8, (short) 0));
-		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.REDSTONE, 13, (short) 0));
-		if(random.nextInt(100) < 3)
-			items.add(new ItemStack(Material.REDSTONE, 21, (short) 0));
-		if(random.nextInt(100) < 10)
-			items.add(new ItemStack(Material.COMPASS, 1, (short) 0));
-		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.RAW_FISH, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.COOKED_FISH, 1, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.INK_SACK, 1, (short) 3));
-		if(random.nextInt(100) < 5)
-			items.add(new ItemStack(Material.CAKE, 1, (short) 0));
-		if(random.nextInt(100) < 80)
-			items.add(new ItemStack(Material.COOKIE, 3, (short) 0));
-		if(random.nextInt(100) < 20)
-			items.add(new ItemStack(Material.COOKIE, 5, (short) 0));
-		
-		int itemCountInChest;
-		switch (random.nextInt(8)) {
-		case 0:
-			itemCountInChest = 2;
-			break;
-		case 1:
-			itemCountInChest = 2;
-			break;
-		case 2:
-			itemCountInChest = 3;
-			break;
-		case 3:
-			itemCountInChest = 3;
-			break;
-		case 4:
-			itemCountInChest = 3;
-			break;
-		case 5:
-			itemCountInChest = 4;
-			break;
-		case 6:
-			itemCountInChest = 4;
-			break;
-		case 7:
-			itemCountInChest = 5;
-			break;
-		default:
-			itemCountInChest = 3;
-		}
-		
-		// Create a list of item contents with the right amount of items
-		List<ItemStack> newContents = new ArrayList<>();
-		for (int i = 0; i < itemCountInChest; i++)
-			newContents.add(items.get(random.nextInt(items.size())));
-		return newContents;
+		return AbandonedDefenceCastleRoomPopulator.genChestContent(random);
 	}
 
     @Override

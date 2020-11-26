@@ -65,7 +65,7 @@ public class BossRoomEasyPopulator extends MazeRoomBlockPopulator {
             Block spawnerBlock = chunk.getBlock(x + 3, yFloor + 1, z + 3);
 
             // Call the spawner generation event
-            GenerationSpawnerEvent event = new GenerationSpawnerEvent(spawnerBlock, EntityType.PIG_ZOMBIE, GenerationSpawnerEvent.GenerationSpawnerCause.BOSSROOM_EASY, rand);
+            GenerationSpawnerEvent event = new GenerationSpawnerEvent(spawnerBlock, EntityType.ZOMBIFIED_PIGLIN, GenerationSpawnerEvent.GenerationSpawnerCause.BOSSROOM_EASY, rand);
             Bukkit.getServer().getPluginManager().callEvent(event);
 
             // Apply the generation event
