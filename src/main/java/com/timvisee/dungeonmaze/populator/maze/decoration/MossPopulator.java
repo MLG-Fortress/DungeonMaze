@@ -29,8 +29,6 @@ public class MossPopulator extends MazeRoomBlockPopulator {
         if (block.getType() == Material.COBBLESTONE)
             block.setType(Material.MOSSY_COBBLESTONE);
 
-        if (block.getType() == Material.SMOOTH_BRICK)
-            block.setData((byte) 1);
 	}
 
     @Override

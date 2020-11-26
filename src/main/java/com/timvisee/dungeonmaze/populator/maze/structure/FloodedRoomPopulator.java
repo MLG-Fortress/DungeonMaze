@@ -37,16 +37,16 @@ public class FloodedRoomPopulator extends MazeRoomBlockPopulator {
         for(int x2=x; x2 <= x + 7; x2+=1) {
             for(int y2= yFloor; y2 <= y + 6; y2+=1) {
                 if(chunk.getBlock(x2, y2, z).getType() != Material.COBBLESTONE && chunk.getBlock(x2, y2, z).getType() != Material.MOSSY_COBBLESTONE)
-                    chunk.getBlock(x2, y2, z).setType(Material.SMOOTH_BRICK);
+                    chunk.getBlock(x2, y2, z).setType(Material.STONE_BRICKS);
 
                 if(chunk.getBlock(x2, y2, z + 7).getType() != Material.COBBLESTONE && chunk.getBlock(x2, y2, z + 7).getType() != Material.MOSSY_COBBLESTONE)
-                    chunk.getBlock(x2, y2, z + 7).setType(Material.SMOOTH_BRICK);
+                    chunk.getBlock(x2, y2, z + 7).setType(Material.STONE_BRICKS);
 
                 if(chunk.getBlock(x, y2, x2).getType() != Material.COBBLESTONE && chunk.getBlock(x, y2, x2).getType() != Material.MOSSY_COBBLESTONE)
-                    chunk.getBlock(x, y2, x2).setType(Material.SMOOTH_BRICK);
+                    chunk.getBlock(x, y2, x2).setType(Material.STONE_BRICKS);
 
                 if(chunk.getBlock(x + 7, y2, x2).getType() != Material.COBBLESTONE && chunk.getBlock(x + 7, y2, x2).getType() != Material.MOSSY_COBBLESTONE)
-                    chunk.getBlock(x + 7, y2, x2).setType(Material.SMOOTH_BRICK);
+                    chunk.getBlock(x + 7, y2, x2).setType(Material.STONE_BRICKS);
             }
         }
 

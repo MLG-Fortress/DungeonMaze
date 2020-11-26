@@ -10,6 +10,7 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Sign;
+import org.bukkit.block.data.type.Slab;
 import org.bukkit.entity.Player;
 
 import com.timvisee.dungeonmaze.populator.maze.MazeRoomBlockPopulator;
@@ -33,13 +34,14 @@ public class GravePopulator extends MazeRoomBlockPopulator {
         final int graveZ = z + rand.nextInt(6) + 1;
 
         // The grave
-        chunk.getBlock(graveX, graveY, graveZ).setType(Material.DOUBLE_STEP);
-        chunk.getBlock(graveX - 1, graveY, graveZ).setType(Material.STEP);
-        chunk.getBlock(graveX - 2, graveY, graveZ).setType(Material.STEP);
+		Slab slab = (Slab)Material.STONE_SLAB.createBlockData();
+		slab.setType(Slab.Type.DOUBLE);
+        chunk.getBlock(graveX, graveY, graveZ).setBlockData(slab);
+        chunk.getBlock(graveX - 1, graveY, graveZ).setType(Material.STONE_SLAB);
+        chunk.getBlock(graveX - 2, graveY, graveZ).setType(Material.STONE_SLAB);
 
         // Put a sign on a grave and write some text on it
-        chunk.getBlock(graveX, graveY + 1, graveZ).setType(Material.SIGN_POST);
-        chunk.getBlock(graveX, graveY + 1, graveZ).setData((byte) 4);
+        chunk.getBlock(graveX, graveY + 1, graveZ).setType(Material.OAK_SIGN);
 
         // Update the text on the sign
         Block b = chunk.getBlock(graveX, graveY + 1, graveZ);

@@ -52,11 +52,10 @@ public class SkullPopulator extends MazeRoomBlockPopulator {
         Block skullBlock = c.getBlock(skullX, skullY, skullZ);
 
         if(withPole)
-            poleBlock.setType(Material.FENCE);
+            poleBlock.setType(Material.OAK_FENCE);
 
         // Get and create the skull block
-        skullBlock.setType(Material.SKULL);
-        skullBlock.setData((byte) 1);
+        skullBlock.setType(Material.PLAYER_HEAD);
 
 		try {
 			Skull skull = (Skull) skullBlock.getState();
@@ -81,7 +80,7 @@ public class SkullPopulator extends MazeRoomBlockPopulator {
 	}
 	
 	private String getRandomOwner(Random rand) {
-		String name = "timvisee";
+		String name = "5goldenbones";
 		if(Bukkit.getOnlinePlayers().size() > 0) {
 			List<Player> onlinePlayers = new ArrayList<>(Bukkit.getOnlinePlayers());
 			name = onlinePlayers.get(rand.nextInt(onlinePlayers.size())).getName();

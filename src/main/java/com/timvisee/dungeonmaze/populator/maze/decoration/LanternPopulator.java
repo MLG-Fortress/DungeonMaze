@@ -42,7 +42,7 @@ public class LanternPopulator extends MazeRoomBlockPopulator {
         final Block b = chunk.getBlock(lanternX, lanternY, lanternZ);
 
         // Make sure the lantern can be placed
-        if(b.getType() != Material.COBBLESTONE && b.getType() != Material.MOSSY_COBBLESTONE && b.getType() != Material.SMOOTH_BRICK)
+        if(b.getType() != Material.COBBLESTONE && b.getType() != Material.MOSSY_COBBLESTONE && b.getType() != Material.STONE_BRICKS)
             return;
 
         // Place the actual lantern
@@ -54,7 +54,7 @@ public class LanternPopulator extends MazeRoomBlockPopulator {
                 b.setType(Material.GLOWSTONE);
 
         } else
-            b.setType(Material.REDSTONE_LAMP_OFF);
+            b.setType(Material.REDSTONE_LAMP);
 	}
 
     /**

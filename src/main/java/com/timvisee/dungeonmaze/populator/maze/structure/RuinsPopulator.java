@@ -49,7 +49,7 @@ public class RuinsPopulator extends MazeRoomBlockPopulator {
             break;
 
         case 1:
-            blockTypeId = Material.SMOOTH_BRICK;
+            blockTypeId = Material.STONE_BRICKS;
             break;
 
         default:

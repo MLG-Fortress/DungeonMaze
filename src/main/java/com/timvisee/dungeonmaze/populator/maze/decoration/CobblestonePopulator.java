@@ -31,7 +31,7 @@ public class CobblestonePopulator extends MazeRoomBlockPopulator {
 
         if (rand.nextInt(100) < CHANCE_CORNER)
             if(chunk.getBlock(x + (rand.nextInt(2)*5), webCeilingY, z + (rand.nextInt(2)*5)).getType() == Material.AIR)
-                chunk.getBlock(x + (rand.nextInt(2)*5), webCeilingY, z + (rand.nextInt(2)*5)).setType(Material.WEB);
+                chunk.getBlock(x + (rand.nextInt(2)*5), webCeilingY, z + (rand.nextInt(2)*5)).setType(Material.COBWEB);
 
         else
             if(!(chunk.getBlock(webX, webY - 1, webZ).getType() == Material.AIR))

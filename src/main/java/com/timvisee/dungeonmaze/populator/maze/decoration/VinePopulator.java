@@ -41,7 +41,7 @@ public class VinePopulator extends MazeRoomBlockPopulator {
 					vineY = rand.nextInt(4) + 2;
 					vineZ = rand.nextInt(6) + 1;
 					
-					if(chunk.getBlock(x + vineX, y + vineY, z + vineZ).getType() == Material.SMOOTH_BRICK) {
+					if(chunk.getBlock(x + vineX, y + vineY, z + vineZ).getType() == Material.STONE_BRICKS) {
 						chunk.getBlock(x + vineX + 1, y + vineY, z + vineZ).setType(Material.VINE);
 						chunk.getBlock(x + vineX + 1, y + vineY, z + vineZ).setData((byte) 2);
 					}
@@ -52,7 +52,7 @@ public class VinePopulator extends MazeRoomBlockPopulator {
 					vineY = rand.nextInt(3) + 3;
 					vineZ = rand.nextInt(6) + 1;
 					
-					if(chunk.getBlock(x + vineX, y + vineY, z + vineZ).getType() == Material.SMOOTH_BRICK) {
+					if(chunk.getBlock(x + vineX, y + vineY, z + vineZ).getType() == Material.STONE_BRICKS) {
 						chunk.getBlock(x + vineX - 1, y + vineY, z + vineZ).setType(Material.VINE);
 						chunk.getBlock(x + vineX - 1, y + vineY, z + vineZ).setData((byte) 8);
 					}
@@ -63,7 +63,7 @@ public class VinePopulator extends MazeRoomBlockPopulator {
 					vineY = rand.nextInt(3) + 3;
 					vineZ = 0;
 					
-					if(chunk.getBlock(x + vineX, y + vineY, z + vineZ).getType() == Material.SMOOTH_BRICK) {
+					if(chunk.getBlock(x + vineX, y + vineY, z + vineZ).getType() == Material.STONE_BRICKS) {
 						chunk.getBlock(x + vineX, y + vineY, z + vineZ + 1).setType(Material.VINE);
 						chunk.getBlock(x + vineX, y + vineY, z + vineZ + 1).setData((byte) 4);
 					}
@@ -74,7 +74,7 @@ public class VinePopulator extends MazeRoomBlockPopulator {
 					vineY = rand.nextInt(3) + 3;
 					vineZ = 7;
 					
-					if(chunk.getBlock(x + vineX, y + vineY, z + vineZ).getType() == Material.SMOOTH_BRICK) {
+					if(chunk.getBlock(x + vineX, y + vineY, z + vineZ).getType() == Material.STONE_BRICKS) {
 						chunk.getBlock(x + vineX, y + vineY, z + vineZ - 1).setType(Material.VINE);
 						chunk.getBlock(x + vineX, y + vineY, z + vineZ - 1).setData((byte) 1);
 					}

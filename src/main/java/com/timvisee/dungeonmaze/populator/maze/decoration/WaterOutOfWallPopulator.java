@@ -37,7 +37,7 @@ public class WaterOutOfWallPopulator extends MazeRoomBlockPopulator {
         // Set the block to water only if it will be replacing a valid wall block
         if(waterBlock.getType() == Material.COBBLESTONE ||
                 waterBlock.getType() == Material.MOSSY_COBBLESTONE ||
-                waterBlock.getType() == Material.SMOOTH_BRICK)
+                waterBlock.getType() == Material.STONE_BRICKS)
             waterBlock.setType(Material.WATER);
 	}
 

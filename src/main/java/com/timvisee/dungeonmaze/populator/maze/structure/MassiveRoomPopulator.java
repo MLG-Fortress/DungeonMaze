@@ -34,14 +34,14 @@ public class MassiveRoomPopulator extends MazeRoomBlockPopulator {
         // Walls
         for(int x2 = x; x2 <= x + 7; x2 += 1) {
             for(int y2 = yFloor + 1; y2 <= yCeiling - 1; y2 += 1) {
-                chunk.getBlock(x2, y2, z).setType(Material.SMOOTH_BRICK);
-                chunk.getBlock(x2, y2, z + 7).setType(Material.SMOOTH_BRICK);
+                chunk.getBlock(x2, y2, z).setType(Material.STONE_BRICKS);
+                chunk.getBlock(x2, y2, z + 7).setType(Material.STONE_BRICKS);
             }
         }
         for(int z2 = z; z2 <= z + 7; z2 += 1) {
             for(int y2 = yFloor + 1; y2 <= yCeiling - 1; y2 += 1) {
-                chunk.getBlock(x, y2, z2).setType(Material.SMOOTH_BRICK);
-                chunk.getBlock(x + 7, y2, z2).setType(Material.SMOOTH_BRICK);
+                chunk.getBlock(x, y2, z2).setType(Material.STONE_BRICKS);
+                chunk.getBlock(x + 7, y2, z2).setType(Material.STONE_BRICKS);
             }
         }
 

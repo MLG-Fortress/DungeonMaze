@@ -58,7 +58,7 @@ public class TreePopulator extends SurfaceBlockPopulator {
                     break;
                 }
 
-            } else if(biome.equals(Biome.MUSHROOM_ISLAND) || biome.equals(Biome.MUSHROOM_ISLAND_SHORE)) {
+            } else if(biome.equals(Biome.MUSHROOM_FIELDS) || biome.equals(Biome.MUSHROOM_FIELD_SHORE)) {
                 switch(rand.nextInt(2)) {
                 case 0:
                     world.generateTree(new Location(world, (chunk.getX() * 16) + xTree, yTree, (chunk.getZ() * 16) + zTree), TreeType.RED_MUSHROOM);
@@ -69,7 +69,7 @@ public class TreePopulator extends SurfaceBlockPopulator {
                     break;
                 }
 
-            } else if(biome.equals(Biome.SWAMPLAND))
+            } else if(biome.equals(Biome.SWAMP))
                 chunk.getWorld().generateTree(new Location(world, (chunk.getX() * 16) + xTree, yTree, (chunk.getZ() * 16) + zTree), TreeType.SWAMP);
 
             else if(biome.equals(Biome.TAIGA) || biome.equals(Biome.TAIGA_HILLS)) {
