@@ -3,6 +3,7 @@ main: ${project.groupId}.${project.artifactId}.${project.name}
 authors: [timvisee, sgdc3, xephi, Metonymia]
 version: ${project.version}
 load: startup
+api-version: 1.16
 commands:
   dm:
     description: Dungeon Maze command
