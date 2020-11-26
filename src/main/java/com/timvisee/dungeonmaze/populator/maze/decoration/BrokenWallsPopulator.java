@@ -33,11 +33,11 @@ public class BrokenWallsPopulator extends MazeRoomBlockPopulator {
         // Define the x and z position of the broken wall
         if(rand.nextBoolean()) {
             posX = roomX + (rand.nextBoolean() ? 0 : 7);
-            posZ = roomZ + rand.nextInt(6) + 1;
+            posZ = Math.abs(roomZ + rand.nextInt(6) + 1);
 
         } else {
             posX = roomZ + rand.nextInt(6) + 1;
-            posZ = roomX + (rand.nextBoolean() ? 0 : 7);
+            posZ = Math.abs(roomX + (rand.nextBoolean() ? 0 : 7));
         }
 
 		// TODO: Improve this!
