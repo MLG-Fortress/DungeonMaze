@@ -90,7 +90,11 @@ public class DungeonMazeChunkGenerator extends ChunkGenerator {
         );
     }
 
-    @SuppressWarnings({"ConstantConditions", "deprecation"})
+    @Override
+    public ChunkData generateChunkData(World world, Random random, int x, int z, BiomeGrid biome) {
+        return super.generateChunkData(world, random, x, z, biome);
+    }
+
     @Override
     public short[][] generateExtBlockSections(World world, Random randSrc, int chunkX, int chunkZ, BiomeGrid biomes) {
         // Get or create the dungeon chunk data
