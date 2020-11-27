@@ -48,6 +48,9 @@ public class BrokenWallsPopulator extends MazeRoomBlockPopulator {
 				" " + roomX +
 				" " + roomZ);
 
+        posX += 7;
+        posZ += 7;
+
 		// TODO: Improve this!
         // Make a gap in the wall
         chunk.getBlock(posX, posY, posZ).setType(Material.AIR);
