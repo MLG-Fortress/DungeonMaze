@@ -30,8 +30,8 @@ public abstract class MazeRoomBlockPopulator extends MazeLayerBlockPopulator {
 		for(int chunkX = 0; chunkX < 16; chunkX += 8) {
 			for(int chunkZ = 0; chunkZ < 16; chunkZ += 8) {
                 // Check whether this this room should be populated based on it's chance
-                if(rand.nextFloat() >= getRoomChance())
-                    continue;
+//                if(rand.nextFloat() >= getRoomChance())
+//                    continue;
 
                 // Iterate through this room
                 final int iterations = getRoomIterations();
@@ -43,8 +43,8 @@ public abstract class MazeRoomBlockPopulator extends MazeLayerBlockPopulator {
                         break;
 
                     // Check whether this this room should be populated in the current iteration based on it's iteration chance
-                    if(rand.nextFloat() >= getRoomIterationsChance())
-                        continue;
+//                    if(rand.nextFloat() >= getRoomIterationsChance())
+//                        continue;
 
                     // Increase the iterations counter
                     iterationCount++;

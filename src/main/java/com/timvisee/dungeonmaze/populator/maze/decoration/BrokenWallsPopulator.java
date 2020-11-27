@@ -2,6 +2,7 @@ package com.timvisee.dungeonmaze.populator.maze.decoration;
 
 import java.util.Random;
 
+import com.timvisee.dungeonmaze.DungeonMaze;
 import org.bukkit.Chunk;
 import org.bukkit.Material;
 
@@ -39,6 +40,14 @@ public class BrokenWallsPopulator extends MazeRoomBlockPopulator {
             posX = roomZ + rand.nextInt(6) + 1;
             posZ = roomX + (rand.nextBoolean() ? 0 : 7);
         }
+
+		DungeonMaze.instance.getLogger().info("BrokenWallsPopulator:" +
+				" posX" + posX +
+				" posZ" + posZ +
+				" roomX" + roomX +
+				" roomZ" + roomZ +
+				" args.getX()" + args.getX() +
+				" args.getZ()" + args.getZ());
 
 		// TODO: Improve this!
         // Make a gap in the wall
