@@ -41,15 +41,17 @@ public class BrokenWallsPopulator extends MazeRoomBlockPopulator {
             posZ = roomX + (rand.nextBoolean() ? 0 : 7);
         }
 
-		DungeonMaze.instance.getLogger().info("BrokenWallsPopulator:" +
-				" " + posX +
-				" " + posY +
-				" " + posZ +
-				" " + roomX +
-				" " + roomZ);
-
-        posX += 7;
-        posZ += 7;
+        if (posX < 0 || posZ < 0)
+		{
+			DungeonMaze.instance.getLogger().info("BrokenWallsPopulator:" +
+					" posX" + posX +
+					" posZ" + posZ +
+					" roomX" + roomX +
+					" roomZ" + roomZ +
+					" args.getX()" + args.getX() +
+					" args.getZ()" + args.getZ());
+			return;
+		}
 
 		// TODO: Improve this!
         // Make a gap in the wall

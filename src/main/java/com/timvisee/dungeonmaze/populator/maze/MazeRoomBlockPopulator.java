@@ -57,12 +57,6 @@ public abstract class MazeRoomBlockPopulator extends MazeLayerBlockPopulator {
                     int x = (chunk.getX() * 16) + chunkX;
                     int z = (chunk.getZ() * 16) + chunkZ;
 
-					DungeonMaze.instance.getLogger().info("MazeRoomBlockPopulator:" +
-							" " + chunkX +
-							" " + chunkZ +
-							" " + x +
-							" " + z);
-
                     // Get the floor and ceiling offset
                     int floorOffset = getFloorOffset(chunkX, y, chunkZ, chunk);
                     int ceilingOffset = getCeilingOffset(chunkX, y, chunkZ, chunk);
