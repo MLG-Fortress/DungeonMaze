@@ -24,6 +24,9 @@ public class TallGrassPopulator extends SurfaceBlockPopulator {
         // Get the surface level
         int ySurface = args.getSurfaceLevel(xGrass, zGrass);
 
+        if (ySurface < 0)
+            return;
+
         if(chunk.getBlock(xGrass, ySurface, zGrass).getType() == Material.GRASS) {
             final int yGrass = ySurface + 1;
 
