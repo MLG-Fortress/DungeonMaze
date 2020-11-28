@@ -49,11 +49,11 @@ public class CreeperSpawnerRoomPopulator extends MazeRoomBlockPopulator {
         DungeonMaze.instance.registerConstantRoom(world.getName(), chunk.getX(), chunk.getZ(), x, y, z);
 
         // Create the core
-        chunk.getBlock(x + 3, yFloor + 1, z + 4).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 4, yFloor + 1, z + 3).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 3, yFloor + 1, z + 2).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 2, yFloor + 1, z + 3).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 3, yFloor + 2, z + 3).setType(Material.NETHER_BRICK);
+        chunk.getBlock(x + 3, yFloor + 1, z + 4).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 4, yFloor + 1, z + 3).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 3, yFloor + 1, z + 2).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 2, yFloor + 1, z + 3).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 3, yFloor + 2, z + 3).setType(Material.NETHER_BRICKS);
 
         // Create the spawner
         if(Core.getConfigHandler().isMobSpawnerAllowed("Creeper")) {

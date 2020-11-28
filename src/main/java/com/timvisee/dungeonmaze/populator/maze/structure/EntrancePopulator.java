@@ -280,7 +280,7 @@ public class EntrancePopulator extends MazeRoomBlockPopulator {
 					for(int zz = 0; zz < 8; zz++) {
 						int yy = yGround + 4;
 						if(xx == 0 || xx == 7 || zz == 0 || zz == 7)
-							chunk.getBlock(x + xx, yy, z + zz).setType(Material.NETHER_BRICK);
+							chunk.getBlock(x + xx, yy, z + zz).setType(Material.NETHER_BRICKS);
 
                         else if(rand.nextInt(100) < 95) {
 							chunk.getBlock(x + xx, yy + 1, z + zz).setType(Material.MOSSY_STONE_BRICK_SLAB);
@@ -291,8 +291,8 @@ public class EntrancePopulator extends MazeRoomBlockPopulator {
 				//   struct bars
 				for(int xx = 1; xx < 7; xx++) {
 					int yy = yGround + 4;
-					chunk.getBlock(x + xx, yy, z + 2).setType(Material.NETHER_BRICK);
-					chunk.getBlock(x + xx, yy, z + 5).setType(Material.NETHER_BRICK);
+					chunk.getBlock(x + xx, yy, z + 2).setType(Material.NETHER_BRICKS);
+					chunk.getBlock(x + xx, yy, z + 5).setType(Material.NETHER_BRICKS);
 				}
 
 				break;

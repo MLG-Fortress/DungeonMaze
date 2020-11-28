@@ -61,7 +61,7 @@ public class BlazeSpawnerRoomPopulator extends MazeRoomBlockPopulator {
         // Netherbrick floor in the bottom of the room
         for(int xx = x; xx <= x + 7; xx += 1)
             for(int zz = z; zz <= z + 7; zz += 1)
-                chunk.getBlock(xx, yFloor, zz).setType(Material.NETHER_BRICK);
+                chunk.getBlock(xx, yFloor, zz).setType(Material.NETHER_BRICKS);
 
         // Cobblestone layer underneath the stone floor
         for(int xx = x; xx <= x + 7; xx += 1)
@@ -76,10 +76,10 @@ public class BlazeSpawnerRoomPopulator extends MazeRoomBlockPopulator {
 
         // Generate corners
         for(int yy = yFloor + 1; yy < yCeiling; yy++) {
-            chunk.getBlock(x, yy, z).setType(Material.NETHER_BRICK);
-            chunk.getBlock(x + 7, yy, z).setType(Material.NETHER_BRICK);
-            chunk.getBlock(x, yy, z + 7).setType(Material.NETHER_BRICK);
-            chunk.getBlock(x + 7, yy, z + 7).setType(Material.NETHER_BRICK);
+            chunk.getBlock(x, yy, z).setType(Material.NETHER_BRICKS);
+            chunk.getBlock(x + 7, yy, z).setType(Material.NETHER_BRICKS);
+            chunk.getBlock(x, yy, z + 7).setType(Material.NETHER_BRICKS);
+            chunk.getBlock(x + 7, yy, z + 7).setType(Material.NETHER_BRICKS);
         }
 
         // Generate fences in the corners
@@ -97,7 +97,7 @@ public class BlazeSpawnerRoomPopulator extends MazeRoomBlockPopulator {
         // Generate platform in the middle
         for (int xx=x + 2; xx <= x + 5; xx+=1)
             for (int zz=z + 2; zz <= z + 5; zz+=1)
-                chunk.getBlock(xx, yFloor + 1, zz).setType(Material.NETHER_BRICK);
+                chunk.getBlock(xx, yFloor + 1, zz).setType(Material.NETHER_BRICKS);
 
         // Generate stairs off the platform
         Stairs stairs = (Stairs)Material.NETHER_BRICK_STAIRS.createBlockData();

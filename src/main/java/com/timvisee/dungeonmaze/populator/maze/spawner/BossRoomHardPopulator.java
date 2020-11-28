@@ -117,26 +117,26 @@ public class BossRoomHardPopulator extends MazeLayerBlockPopulator {
         chunk.getBlock(x + 8, y + 4, z + 8).setType(Material.GLASS);
 
         // Netherbrick hull
-        chunk.getBlock(x + 6, y + 1, z + 7).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 6, y + 1, z + 8).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 7, y + 1, z + 6).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 7, y + 1, z + 9).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 8, y + 1, z + 6).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 8, y + 1, z + 9).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 9, y + 1, z + 7).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 9, y + 1, z + 8).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 6, y + 2, z + 7).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 6, y + 2, z + 8).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 7, y + 2, z + 6).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 7, y + 2, z + 9).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 8, y + 2, z + 6).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 8, y + 2, z + 9).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 9, y + 2, z + 7).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 9, y + 2, z + 8).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 7, y + 3, z + 7).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 7, y + 3, z + 8).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 8, y + 3, z + 7).setType(Material.NETHER_BRICK);
-        chunk.getBlock(x + 8, y + 3, z + 8).setType(Material.NETHER_BRICK);
+        chunk.getBlock(x + 6, y + 1, z + 7).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 6, y + 1, z + 8).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 7, y + 1, z + 6).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 7, y + 1, z + 9).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 8, y + 1, z + 6).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 8, y + 1, z + 9).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 9, y + 1, z + 7).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 9, y + 1, z + 8).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 6, y + 2, z + 7).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 6, y + 2, z + 8).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 7, y + 2, z + 6).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 7, y + 2, z + 9).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 8, y + 2, z + 6).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 8, y + 2, z + 9).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 9, y + 2, z + 7).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 9, y + 2, z + 8).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 7, y + 3, z + 7).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 7, y + 3, z + 8).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 8, y + 3, z + 7).setType(Material.NETHER_BRICKS);
+        chunk.getBlock(x + 8, y + 3, z + 8).setType(Material.NETHER_BRICKS);
 
         // Ores
         chunk.getBlock(x + 7, y + 1, z + 7).setType(Material.IRON_ORE);
