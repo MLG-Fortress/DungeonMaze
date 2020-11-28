@@ -8,6 +8,7 @@ import org.bukkit.block.Block;
 
 import com.timvisee.dungeonmaze.populator.maze.MazeRoomBlockPopulator;
 import com.timvisee.dungeonmaze.populator.maze.MazeRoomBlockPopulatorArgs;
+import org.bukkit.block.BlockFace;
 
 public class NetherrackPopulator extends MazeRoomBlockPopulator {
 
@@ -34,7 +35,7 @@ public class NetherrackPopulator extends MazeRoomBlockPopulator {
 
             // Decide if the netherrack should be burning
             if(rand.nextFloat() < BURNING_CHANCE) {
-                Block burnBlock = chunk.getBlock(b.getX(), b.getY() + 1, b.getZ());
+                Block burnBlock = b.getRelative(BlockFace.UP);
                 if (burnBlock.getType() == Material.AIR)
                     burnBlock.setType(Material.FIRE);
             }
