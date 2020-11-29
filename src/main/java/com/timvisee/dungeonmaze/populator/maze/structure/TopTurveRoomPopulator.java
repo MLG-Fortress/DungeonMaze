@@ -32,10 +32,10 @@ public class TopTurveRoomPopulator extends MazeRoomBlockPopulator {
 		final World world = args.getWorld();
 		final Chunk chunk = args.getSourceChunk();
 		final Random rand = args.getRandom();
-		final int x = args.getX();
+		final int x = args.getRoomChunkX();
 		final int y = args.getY();
 		final int yCeiling = args.getCeilingY();
-		final int z = args.getZ();
+		final int z = args.getRoomChunkZ();
 			
         // Register the current room as constant room
         DungeonMaze.instance.registerConstantRoom(world.getName(), chunk.getX(), chunk.getZ(), x, y, z);
