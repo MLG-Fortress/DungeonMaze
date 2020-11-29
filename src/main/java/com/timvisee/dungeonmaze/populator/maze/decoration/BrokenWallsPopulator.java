@@ -41,7 +41,7 @@ public class BrokenWallsPopulator extends MazeRoomBlockPopulator {
             posZ = roomX + (rand.nextBoolean() ? 0 : 7);
         }
 
-        if (posX < 0 || posZ < 0 || posX > 15 || posZ > 15)
+        if (posX < 0 || posZ < 0 || posX >= 15 || posZ >= 15)
 		{
 			DungeonMaze.instance.getLogger().info("BrokenWallsPopulator:" +
 					" posX" + posX +

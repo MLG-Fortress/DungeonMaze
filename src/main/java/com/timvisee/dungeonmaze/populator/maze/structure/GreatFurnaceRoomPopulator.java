@@ -85,11 +85,11 @@ public class GreatFurnaceRoomPopulator extends MazeRoomBlockPopulator {
         for(int x2 = x + 3; x2 <= x + 4; x2 += 1)
             for(int y2 = y + 3; y2 <= y + 5; y2 += 1)
                 for(int z2 = z + 3; z2 <= z + 4; z2 += 1)
-                    chunk.getBlock(x2, y2, z2).setType(Material.BRICK);
+                    chunk.getBlock(x2, y2, z2).setType(Material.BRICKS);
         if(chunk.getBlock(x + 3, y + 6, z + 3).getType() == Material.AIR)
             for(int x2 = x + 3; x2 <= x + 4; x2 += 1)
                 for(int z2 = z + 3; z2 <= z + 4; z2 += 1)
-                    chunk.getBlock(x2, y + 6, z2).setType(Material.BRICK);
+                    chunk.getBlock(x2, y + 6, z2).setType(Material.BRICKS);
     }
 	
 	public void addItemsToFurnace(Random random, Furnace furnace) {
