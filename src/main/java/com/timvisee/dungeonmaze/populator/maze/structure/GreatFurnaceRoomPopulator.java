@@ -34,13 +34,13 @@ public class GreatFurnaceRoomPopulator extends MazeRoomBlockPopulator {
         DungeonMaze.instance.registerConstantRoom(world.getName(), chunk, x, y, z);
 
         // Floor
-        for (int x2=x; x2 <= x + 8; x2+=1)
-            for (int z2=z; z2 <= z + 8; z2+=1)
+        for (int x2=x; x2 <= x + 7; x2+=1)
+            for (int z2=z; z2 <= z + 7; z2+=1)
                 chunk.getBlock(x2, y + 1, z2).setType(Material.STONE);
 
         // Change the layer below the stone floor to cobblestone
-        for (int x2=x; x2 <= x + 8; x2++)
-            for (int z2=z; z2 <= z + 8; z2++)
+        for (int x2=x; x2 <= x + 7; x2++)
+            for (int z2=z; z2 <= z + 7; z2++)
                     chunk.getBlock(x2, y, z2).setType(Material.COBBLESTONE);
 
         // Pillar1
