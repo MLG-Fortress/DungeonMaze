@@ -142,8 +142,8 @@ public class EntrancePopulator extends MazeRoomBlockPopulator {
 				chunk.getBlock(x, yGround + 2, z + 4).setType(Material.AIR);
 				for(int zz = 2; zz < 6; zz++)
 					chunk.getBlock(x, yGround + 3, z + zz).setType(Material.OAK_PLANKS);
-				chunk.getBlock(x - 1, yGround + 2, z + 1).setType(Material.TORCH);
-				chunk.getBlock(x - 1, yGround + 2, z + 6).setType(Material.TORCH);
+				chunk.getBlock(x, yGround + 2, z + 1).setType(Material.TORCH);
+				chunk.getBlock(x, yGround + 2, z + 6).setType(Material.TORCH);
 
 				break;
 
